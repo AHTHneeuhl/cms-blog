@@ -1,11 +1,15 @@
+import { useEffect, useState } from 'react'
 import Link from 'next/link'
-
-const categories = [
-  { name: 'React', slug: 'react' },
-  { name: 'Web development', slug: 'web-dev' },
-]
+import { getCategories } from 'services'
+import { TCategories } from './types'
 
 const Header = () => {
+  const [categories, setCategories] = useState<TCategories[]>([])
+
+  useEffect(() => {
+    getCategories().then((newCategories) => setCategories(newCategories))
+  }, [])
+
   return (
     <div className="container mx-auto mb-8 px-10">
       <div className="inline-block w-full border-b border-blue-400 py-8">

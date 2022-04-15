@@ -1,16 +1,6 @@
 export type TPost = {
-  author: {
-    bio: string
-    id: string
-    name: string
-    photo: {
-      url: string
-    }
-  }
-  categories: {
-    name: string
-    slug: string
-  }[]
+  author: TAuthor
+  categories: TCategories[]
   createdAt: string
   excerpt: string
   featuredImage: {
@@ -18,4 +8,18 @@ export type TPost = {
   }
   slug: string
   title: string
+}
+
+export type TCategories = {
+  name: string
+  slug: string
+}
+
+export type TAuthor = {
+  bio: string
+  id: string
+  name: string
+  photo: {
+    url: string
+  }
 }
