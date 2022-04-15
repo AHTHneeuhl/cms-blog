@@ -6,11 +6,8 @@ import { getRecentPosts, getSimilarPosts } from 'services'
 import { TPost } from './types'
 
 interface PostWidgetProps {
-  categories: {
-    name: string
-    slug: string
-  }[]
-  slug: string
+  categories?: string[]
+  slug?: string
 }
 
 const PostWidget = ({ categories, slug }: PostWidgetProps) => {
@@ -18,7 +15,7 @@ const PostWidget = ({ categories, slug }: PostWidgetProps) => {
 
   useEffect(() => {
     if (slug) {
-      getSimilarPosts(categories, slug).then((result) =>
+      getSimilarPosts(categories!, slug).then((result) =>
         setRelatedPosts(result)
       )
     } else {

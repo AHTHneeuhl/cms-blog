@@ -8,6 +8,16 @@ export type TPost = {
   }
   slug: string
   title: string
+  content: {
+    raw: {
+      children: {
+        children: {
+          text: string
+        }[]
+        type: string
+      }[]
+    }
+  }
 }
 
 export type TCategories = {

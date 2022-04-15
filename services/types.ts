@@ -1,7 +1,4 @@
 export type TGetSimilarPostsPayload = {
-  categories: {
-    name: string
-    slug: string
-  }
+  categories: string[]
   slug: string
 }
