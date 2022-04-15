@@ -1,5 +1,5 @@
 import { request, gql } from 'graphql-request'
-import { TGetSimilarPostsPayload } from './types'
+import { TSetPostCommentPayload } from './types'
 
 const graphqlAPI = process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT
 
@@ -134,4 +134,16 @@ export const getPostDetails = async (slug: string) => {
   const result = await request(graphqlAPI!, query, { slug })
 
   return result.post
+}
+
+export const setPostComment = async (values: TSetPostCommentPayload) => {
+  const result = await fetch('/api/comments', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(values),
+  })
+
+  return result.json()
 }

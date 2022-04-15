@@ -15,7 +15,7 @@ const Header = () => {
       <div className="inline-block w-full border-b border-blue-400 py-8">
         <div className="block md:float-left">
           <Link href="/">
-            <span className="curson-pointer text-4xl font-bold text-white">
+            <span className="curson-pointer cursor-pointer text-4xl font-bold text-white">
               GraphCMS
             </span>
           </Link>
