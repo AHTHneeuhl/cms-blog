@@ -7,7 +7,10 @@ export type TPost = {
       url: string
     }
   }
-  categories: [{}]
+  categories: {
+    name: string
+    slug: string
+  }[]
   createdAt: string
   excerpt: string
   featuredImage: {
