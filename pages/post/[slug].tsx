@@ -27,6 +27,7 @@ const PostDetails = ({ post }: PostDetailsProps) => {
           <PostDetail post={post} />
           <Author author={post.author} />
           <CommentForm slug={post.slug} />
+          <Comments slug={post.slug} />
         </div>
         <div className="col-span-1 lg:col-span-4">
           <div className="relative top-8 lg:sticky">

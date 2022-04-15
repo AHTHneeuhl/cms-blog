@@ -33,3 +33,9 @@ export type TAuthor = {
     url: string
   }
 }
+
+export type TComment = {
+  name: string
+  createdAt: string
+  comment: string
+}
